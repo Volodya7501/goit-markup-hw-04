@@ -44,16 +44,14 @@ body {
 /* #region header*/
 .header {
   border-bottom: 1px solid #e7e9fc;
-  background-color: #fff;
+  box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 2px 1px 0 rgba(46, 47, 66, 0.08);
 }
 .container {
   display: flex;
   align-items: center;
 }
-/* .header-container {
-  display: flex;
-  align-items: center;
-} */
+
 .header-nav {
   display: flex;
   align-items: center;
@@ -68,14 +66,10 @@ body {
   align-items: center;
   gap: 40px;
 }
-.adr-list {
-  display: flex;
-  align-items: center;
+.header-nav-link.current {
+  position: relative;
 }
-.adr {
-  margin-left: auto;
-  font-style: normal;
-}
+
 .header-nav-logo {
   font-family: "Raleway", sans-serif;
   font-weight: 700;
@@ -105,16 +99,29 @@ body {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #2e2f42;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.header-nav-link:hover {
-  color: #404bbf;
+.header-nav-link.current::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  border-radius: 2px;
+  background: #404bbf;
+  width: 100%;
+  height: 4px;
 }
-.header-nav-link:focus {
-  color: #404bbf;
+
+.adr-list {
+  display: flex;
+  align-items: center;
 }
 .adr {
+  margin-left: auto;
+  font-style: normal;
 }
+
 .adr-list {
   display: flex;
   align-items: center;
@@ -130,20 +137,19 @@ body {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #434455;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-.adr-list-contacts-link:hover {
-  color: #404bbf;
-}
-.adr-list-contacts-link:focus {
+.header-nav-link:hover,
+.header-nav-link:focus,
+.adr-list-contacts-link:hover,
+.adr-list-contacts-link:focus,
+.header-nav-link.current::after {
+  content: "";
   color: #404bbf;
 }
 /* #endregion header */
+
 /* #region hero */
-/* .container {
-  display: flex;
-  align-items: center;
-} */
 
 .hero {
   background-color: #2e2f42;
@@ -153,12 +159,16 @@ body {
   display: flex;
   align-items: center;
 }
-.hero .container {
+.hero 
+/* .container  */ {
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* align-items: center; */
+}
+.hero-container {
+  flex-direction: column;
+  justify-content: center;
 }
 .hero-style {
   font-family: "Roboto", sans-serif;
@@ -191,18 +201,15 @@ body {
   border: none;
   cursor: pointer;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
-  /* margin: 16px 32px 16px 32px; */
 }
 .btn:hover,
 .btn:focus {
   background-color: #404bbf;
 }
 /* #endregion hero */
+
 /* #region text */
-/* .container {
-  display: flex;
-  align-items: center;
-} */
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -219,8 +226,6 @@ body {
   padding: 120px 0;
 }
 .description-list {
-  /* padding-left: 24px;
-  padding-right: 24px; */
   display: flex;
   align-items: center;
   gap: 24px;
@@ -229,9 +234,6 @@ body {
   width: calc((100% - 24px * 3) / 4);
 }
 
-.ourteam-list-item-img {
-  /* margin-bottom: 32px; */
-}
 .description-list-item-title {
   font-weight: 500;
   font-size: 20px;
@@ -250,6 +252,7 @@ body {
 }
 
 /* #endregion text */
+
 /* #region our team */
 .ourteam-container {
   background-color: #f4f4fd;
@@ -265,12 +268,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* background-color: #f4f4fd; */
 }
-/* .container {
-  display: flex;
-  align-items: center;
-} */
+
 .ourteam-title {
   font-weight: 700;
   font-size: 36px;
@@ -325,15 +324,18 @@ body {
   display: flex;
   align-items: center;
 }
-.ourportfolio-container {
-}
+
 .ourportfolio {
   padding-top: 120px;
   padding-bottom: 120px;
+  flex-direction: column;
+  align-items: center;
 }
 .container {
   display: flex;
   align-items: center;
+}
+.ourportfolio-container {
   flex-direction: column;
 }
 .ourportfolio-title {
@@ -388,9 +390,7 @@ body {
   background-color: #2e2f42;
   padding: 100px 0;
 }
-/* .container{
-  display: flex;
-} */
+
 .footer-container {
   display: inline-block;
   max-width: 264px;
@@ -434,3 +434,4 @@ body {
   margin-right: auto;
 }
 /* #endregion footer */
+/* dsfdsfdsf */
