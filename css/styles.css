@@ -399,7 +399,7 @@ body {
 .social-list-item {
   display: flex;
   justify-content: center;
-  column-gap: 24px;
+  gap: 24px;
 }
 
 .social-list-link {
@@ -410,12 +410,12 @@ body {
   height: 40px;
   border-radius: 50%;
   fill: #f4f4fd;
-  background-color: #404bbf;
+  background-color: #4d5ae5;
 }
 
 .social-list-link:hover,
 .social-list-link:focus {
-  background-color: #31d0aa;
+  background-color: #404bbf;
 }
 
 /* #endregion our team */
