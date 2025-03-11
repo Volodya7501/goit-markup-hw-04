@@ -410,7 +410,7 @@ body {
   height: 40px;
   border-radius: 50%;
   fill: #f4f4fd;
-  background-color: #4d5ae5;
+  background-color: #404bbf;
 }
 
 .social-list-link:hover,
@@ -544,7 +544,7 @@ body {
   line-height: 1.17;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  color: #4d5ae5;
+  color: #404bbf;
   display: inline-block;
   margin-bottom: 16px;
   /* margin-right: auto; */
